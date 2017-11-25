@@ -1,6 +1,8 @@
 (function() {
     function HomeCtrl(Room) {
       this.rooms = Room.all;
+      // make Room.add function available to the view
+      this.addRoom = Room.add;
     }
 
     angular

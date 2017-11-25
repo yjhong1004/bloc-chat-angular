@@ -16,6 +16,10 @@ Room service – retrieves and saves room data to Firebase
     // Make the room list accessible to the controller by attaching it to the service object
     Room.all = rooms;
 
+    Room.add = function(roomName) {
+      rooms.$add({ name: roomName });
+    }
+
     // return the service object to make it accessible in the controller
     return Room;
   }

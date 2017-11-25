@@ -1,5 +1,18 @@
  <h1>Home Page</h1>
 
 <ul>
-  <li ng-repeat="room in home.rooms">{{room.$value}}</li>
+  <li ng-repeat="room in home.rooms">{{room.name}}</li>
 </ul>
+
+<form ng-submit="home.addRoom(roomName)">
+  Room name:<br>
+  <input type="text" ng-model="roomName" placeholder="Enter room name"><br>
+  <input type="submit" value="Submit">
+</form>
+
+<!--
+
+ng-submit
+ng-model
+
+-->
