@@ -1,7 +1,7 @@
  <h1>Home Page</h1>
 
 <ul>
-  <li ng-repeat="room in home.rooms">{{room.name}}</li>
+  <li ng-repeat="room in home.rooms" ng-click="home.messageSelect(room)">{{room.name}}</li>
 </ul>
 
 <form ng-submit="home.addRoom(roomName)">
@@ -9,6 +9,12 @@
   <input type="text" ng-model="roomName" placeholder="Enter room name"><br>
   <input type="submit" value="Submit">
 </form>
+
+<h2>{{home.selectedRoom.name}}</h1>
+
+<ul>
+  <li ng-repeat="message in home.messageRoom">{{message.username}}: {{message.content}}</li>
+</ul>
 
 <!--
 
