@@ -15,6 +15,6 @@
    }
 
    angular
-       .module('bloc-chat-angular', ['ui.router', 'firebase'])
+       .module('bloc-chat-angular', ['ui.router', 'firebase', 'ngCookies'])
        .config(config);
  })();

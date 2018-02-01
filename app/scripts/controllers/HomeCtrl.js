@@ -1,8 +1,9 @@
 (function() {
-    function HomeCtrl(Room, Message) {
+    function HomeCtrl(Room, Message, Username) {
       this.rooms = Room.all;
       // make Room.add function available to the view
       this.addRoom = Room.add;
+      this.addUsername = Username.setUsername; 
       // need to make getByRoomId function available ot the view
       // so it can be run when the user clicks (ng-click) on a room name
 
@@ -22,7 +23,7 @@
 
     angular
         .module('bloc-chat-angular')
-        .controller('HomeCtrl', ['Room','Message', HomeCtrl]);
+        .controller('HomeCtrl', ['Room','Message','Username', HomeCtrl]);
 })();
 
 // dependency array
