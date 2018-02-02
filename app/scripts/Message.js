@@ -4,6 +4,7 @@
     var MessageFactory = {};
     // Use firebase to access the data at the rooms list in the database
     var ref = firebase.database().ref().child("messages");
+    var messages = $firebaseArray(ref);
 
     MessageFactory.getByRoomId = function(roomId) {
         // Filter the messages by their room ID.
@@ -16,8 +17,17 @@
     // var messages = MessageFactory.getByRoomId('-KzVeXMwKlxl2E6sY9M8');
     // console.log(messages);
     // // return the service object to make it accessible in the controller
+
+    MessageFactory.send = function(newMessage) {
+       // Send method logic
+      //  var newMessage = {};
+      //  return $firebaseArray(ref.orderByChild('content').set(newMessage));
+      console.log(newMessage);
+      messages.$add(newMessage);
+    };
+
     return MessageFactory;
-  }
+  };
 
   angular
     .module('bloc-chat-angular')
