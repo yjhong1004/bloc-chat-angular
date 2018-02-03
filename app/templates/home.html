@@ -16,17 +16,19 @@
   <li ng-repeat="message in home.messageRoom">{{message.username}}: {{message.content}}</li>
 </ul>
 
-<form ng-submit="home.newMessageSend(newMessage)">
+<form ng-if= "home.selectedRoom" ng-submit="home.newMessageSend(newMessage)">
   New Message:<br>
   <input type="text" ng-model="newMessage" placeholder="Enter new message"><br>
   <input type="submit" value="Submit">
 </form>
 
-<form ng-submit="home.addUsername(username)">
-  Username:<br>
-  <input type="text" ng-model="username" placeholder="Enter room name"><br>
-  <input type="submit" value="Submit">
-</form>
+<div ng-if="!home.currentUser()" class="modal">
+  <form ng-submit="home.addUsername(username)">
+    Username:<br>
+    <input type="text" ng-model="username" placeholder="Enter room name"><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
 
 <!--
 ng-submit

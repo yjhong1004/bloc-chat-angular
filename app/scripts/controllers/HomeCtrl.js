@@ -4,6 +4,7 @@
       // make Room.add function available to the view
       this.addRoom = Room.add;
       this.addUsername = Username.setUsername;
+      this.currentUser = Username.getUsername;
       // need to make getByRoomId function available ot the view
       // so it can be run when the user clicks (ng-click) on a room name
 
@@ -29,7 +30,7 @@
         message.roomId = this.selectedRoom.$id
         // Put all of the above into an object
         message.content = newMessage;
-        Message.send(message); 
+        Message.send(message);
       }
          // need to get send function available at the view
          // so it can run when the user clicks submit on submit button
